@@ -1,0 +1,1211 @@
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f5fb;
+    color: #29243a;
+}
+
+.dashboard-page {
+    min-height: 100vh;
+}
+
+
+/* =====================================
+   APP LAYOUT
+===================================== */
+
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+}
+
+.dashboard-content {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+
+    background-color: white;
+    border-right: 1px solid #ddd7e8;
+
+    padding: 25px 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    flex-shrink: 0;
+}
+
+
+/* SIDEBAR LOGO */
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px;
+    margin-bottom: 30px;
+
+    color: #463085;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sidebar-logo i {
+    font-size: 25px;
+}
+
+
+/* =====================================
+   SIDEBAR NAVIGATION
+===================================== */
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar nav button {
+    width: 100%;
+
+    padding: 12px 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: white;
+    color: #55515f;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    text-align: left;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.sidebar nav button:hover {
+    background-color: #f0ecf7;
+    color: #463085;
+}
+
+.sidebar nav button.active {
+    background-color: #eee9fa;
+    color: #463085;
+    font-weight: 600;
+}
+
+.sidebar nav button i {
+    width: 20px;
+    text-align: center;
+}
+
+
+/* =====================================
+   LOGOUT
+===================================== */
+
+.logout {
+    margin-top: auto;
+
+    padding: 12px 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: white;
+    color: #55515f;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.logout:hover {
+    background-color: #f0ecf7;
+    color: #463085;
+}
+
+.logout i {
+    width: 20px;
+    text-align: center;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.dashboard-header {
+    height: 75px;
+
+    background-color: white;
+
+    border-bottom: 1px solid #ddd7e8;
+
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* MENU BUTTON */
+
+.menu-btn {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.menu-btn:hover {
+    background-color: #f0ecf7;
+}
+
+
+/* =====================================
+   SEARCH
+===================================== */
+
+.dashboard-search {
+    width: 400px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px 14px;
+
+    background-color: #f7f5fb;
+
+    border: 1px solid #ddd7e8;
+    border-radius: 8px;
+
+    transition: border-color 0.2s ease;
+}
+
+.dashboard-search:focus-within {
+    border-color: #b197fc;
+}
+
+.dashboard-search i {
+    margin-right: 10px;
+}
+
+.dashboard-search input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background-color: transparent;
+
+    font-size: 14px;
+    color: #29243a;
+}
+
+.dashboard-search input::placeholder {
+    color: #9993a5;
+}
+
+
+/* =====================================
+   HEADER RIGHT SIDE
+===================================== */
+
+.dashboard-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.theme-btn,
+.notification-btn {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #f0ecf7;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.theme-btn:hover,
+.notification-btn:hover {
+    background-color: #e3ddf0;
+    transform: translateY(-1px);
+}
+
+
+/* NOTIFICATION */
+
+.notification-btn {
+    position: relative;
+}
+
+.notification-dot {
+    width: 7px;
+    height: 7px;
+
+    background-color: red;
+
+    border: 1px solid white;
+    border-radius: 50%;
+
+    position: absolute;
+
+    top: 6px;
+    right: 6px;
+}
+
+
+/* USER */
+
+.user-info {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-left: 5px;
+}
+
+.avatar i {
+    font-size: 30px;
+}
+
+#topname {
+    font-size: 14px;
+    color: #29243a;
+}
+
+
+/* =====================================
+   DASHBOARD MAIN
+===================================== */
+
+.dashboard-main {
+    padding: 30px;
+
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =====================================
+   WELCOME SECTION
+===================================== */
+
+.welcome-section {
+    grid-column: span 12;
+
+    margin-bottom: 5px;
+}
+
+.welcome-section h1 {
+    font-size: 28px;
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+    color: #29243a;
+}
+
+.welcome-section p {
+    color: #77727f;
+    font-size: 14px;
+}
+
+
+/* =====================================
+   STAT CARDS
+===================================== */
+
+.stat-cards {
+    grid-column: span 4;
+
+    min-height: 150px;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border: 1px solid #e4dfeb;
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(70, 48, 133, 0.04);
+
+    transition: all 0.2s ease;
+}
+
+.stat-cards:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 15px rgba(70, 48, 133, 0.08);
+}
+
+
+/* CARD TOP */
+
+.stat-card-top {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+.stat-card-top span {
+    font-size: 14px;
+    color: #66616d;
+}
+
+
+/* ICON BOX */
+
+.cgpa-icon,
+.attendance-icon,
+.pendingTasks-icon,
+.studyHours-icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f3effa;
+}
+
+.cgpa-icon i,
+.attendance-icon i,
+.pendingTasks-icon i,
+.studyHours-icon i {
+    font-size: 18px;
+}
+
+
+/* STAT VALUE */
+
+.stat-cards h2 {
+    font-size: 26px;
+    font-weight: 700;
+
+    margin-bottom: 5px;
+
+    color: #29243a;
+}
+
+.stat-cards p {
+    color: #77727f;
+    font-size: 13px;
+}
+
+
+/* =====================================
+   DASHBOARD GRID
+===================================== */
+
+.dashboard-grid {
+    display: contents;
+}
+
+.dashboard-card {
+    min-height: 250px;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border: 1px solid #e4dfeb;
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(70, 48, 133, 0.04);
+}
+
+
+/* THREE MAIN CARDS */
+
+.classes-card {
+    grid-column: span 4;
+}
+
+.tasks-card {
+    grid-column: span 4;
+}
+
+.timer-card {
+    grid-column: span 4;
+
+    margin-top: 0;
+}
+
+
+/* =====================================
+   CARD HEADER
+===================================== */
+
+.card-header {
+    margin-bottom: 18px;
+}
+
+.card-header h3,
+.class-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #29243a;
+}
+
+
+/* =====================================
+   CLASSES
+===================================== */
+
+.class-item {
+    display: flex;
+    align-items: center;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #eeeaf2;
+}
+
+.class-item:last-child {
+    border-bottom: none;
+}
+
+.class-time {
+    width: 100px;
+
+    font-size: 13px;
+    color: #77727f;
+
+    flex-shrink: 0;
+}
+
+.class-subject {
+    width: 100px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #29243a;
+}
+
+.class-room {
+    margin-left: auto;
+
+    font-size: 13px;
+
+    color: #77727f;
+}
+
+
+/* =====================================
+   SMALL BUTTON
+===================================== */
+
+.small-btn {
+    margin-top: 15px;
+
+    padding: 9px 15px;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #463085;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.small-btn:hover {
+    background-color: #35236d;
+    transform: translateY(-1px);
+}
+
+
+/* =====================================
+   TASKS
+===================================== */
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #eeeaf2;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-left {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+.task-checkbox {
+    width: 16px;
+    height: 16px;
+
+    accent-color: #463085;
+
+    cursor: pointer;
+}
+
+.task-item span {
+    font-size: 14px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.task-item small {
+    color: #77727f;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================
+   TIMER
+===================================== */
+
+.class-header {
+    margin-bottom: 20px;
+}
+
+.timer-container {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.timer-circle {
+    width: 180px;
+    height: 180px;
+
+    border: 8px solid #eee9fa;
+
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#timerDisplay {
+    font-size: 30px;
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+    color: #29243a;
+}
+
+.start-timer-btn {
+    padding: 8px 18px;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #463085;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.start-timer-btn:hover {
+    background-color: #35236d;
+    transform: translateY(-1px);
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1000px) {
+
+    .sidebar {
+        width: 220px;
+    }
+
+    .dashboard-search {
+        width: 300px;
+    }
+
+    .stat-cards {
+        grid-column: span 6;
+    }
+
+    .classes-card,
+    .tasks-card,
+    .timer-card {
+        grid-column: span 6;
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 700px) {
+
+    .app-shell {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+
+        padding: 15px;
+
+        border-right: none;
+        border-bottom: 1px solid #ddd7e8;
+    }
+
+    .sidebar-logo {
+        margin-bottom: 15px;
+    }
+
+    .sidebar nav {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 6px;
+    }
+
+    .logout {
+        margin-top: 10px;
+    }
+
+    .dashboard-header {
+        height: auto;
+
+        padding: 15px;
+
+        flex-wrap: wrap;
+    }
+
+    .dashboard-search {
+        width: 100%;
+        order: 3;
+    }
+
+    .dashboard-actions {
+        margin-left: auto;
+    }
+
+    .dashboard-main {
+        padding: 20px 15px;
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .welcome-section {
+        grid-column: span 1;
+    }
+
+    .stat-cards,
+    .classes-card,
+    .tasks-card,
+    .timer-card {
+        grid-column: span 1;
+    }
+
+    .dashboard-card {
+        min-height: auto;
+    }
+
+    .class-time {
+        width: 80px;
+    }
+
+    .class-subject {
+        width: auto;
+    }
+
+    .timer-circle {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 450px) {
+
+    .sidebar nav {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-actions {
+        gap: 7px;
+    }
+
+    .user-info {
+        gap: 5px;
+    }
+
+    #topname {
+        display: none;
+    }
+
+    .welcome-section h1 {
+        font-size: 24px;
+    }
+
+    .stat-cards {
+        padding: 17px;
+    }
+
+    .dashboard-card {
+        padding: 17px;
+    }
+
+    .class-item {
+        flex-wrap: wrap;
+
+        gap: 5px;
+    }
+
+    .class-time {
+        width: 80px;
+    }
+
+    .class-room {
+        width: 100%;
+        margin-left: 80px;
+    }
+}
+
+/* =====================================
+   DARK MODE
+===================================== */
+
+body.dark-mode {
+    background-color: #171522;
+    color: #f5f3fa;
+}
+
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+body.dark-mode .sidebar {
+    background-color: #211d2d;
+    border-right-color: #383246;
+}
+
+body.dark-mode .sidebar-logo {
+    color: #ffffff;
+}
+
+body.dark-mode .sidebar-logo i {
+    color: #b197fc !important;
+}
+
+
+/* SIDEBAR BUTTONS */
+
+body.dark-mode .sidebar nav button {
+    background-color: transparent;
+    color: #d1ccd9;
+}
+
+body.dark-mode .sidebar nav button:hover {
+    background-color: #2d273b;
+    color: #ffffff;
+}
+
+body.dark-mode .sidebar nav button.active {
+    background-color: #39304f;
+    color: #ffffff;
+}
+
+body.dark-mode .sidebar nav button i {
+    color: #b197fc !important;
+}
+
+
+/* LOGOUT */
+
+body.dark-mode .logout {
+    background-color: transparent;
+    color: #d1ccd9;
+}
+
+body.dark-mode .logout:hover {
+    background-color: #2d273b;
+    color: #ffffff;
+}
+
+body.dark-mode .logout i {
+    color: #b197fc !important;
+}
+
+
+/* =====================================
+   MAIN CONTENT
+===================================== */
+
+body.dark-mode .dashboard-content {
+    background-color: #171522;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+body.dark-mode .dashboard-header {
+    background-color: #211d2d;
+    border-bottom-color: #383246;
+}
+
+
+/* MENU BUTTON */
+
+body.dark-mode .menu-btn {
+    background-color: #211d2d;
+    color: #ffffff;
+}
+
+body.dark-mode .menu-btn:hover {
+    background-color: #2d273b;
+}
+
+body.dark-mode .menu-btn i {
+    color: #ffffff !important;
+}
+
+
+/* =====================================
+   SEARCH
+===================================== */
+
+body.dark-mode .dashboard-search {
+    background-color: #2a2536;
+    border-color: #40394d;
+}
+
+body.dark-mode .dashboard-search:focus-within {
+    border-color: #b197fc;
+}
+
+body.dark-mode .dashboard-search i {
+    color: #b197fc !important;
+}
+
+body.dark-mode .dashboard-search input {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+body.dark-mode .dashboard-search input::placeholder {
+    color: #aaa4b5;
+}
+
+
+/* =====================================
+   HEADER RIGHT SIDE
+===================================== */
+
+body.dark-mode .theme-btn,
+body.dark-mode .notification-btn {
+    background-color: #302a3d;
+}
+
+body.dark-mode .theme-btn:hover,
+body.dark-mode .notification-btn:hover {
+    background-color: #3a3348;
+}
+
+body.dark-mode .theme-btn i,
+body.dark-mode .notification-btn i {
+    color: #ffffff !important;
+}
+
+
+/* NOTIFICATION DOT */
+
+body.dark-mode .notification-dot {
+    border-color: #302a3d;
+}
+
+
+/* USER */
+
+body.dark-mode #topname {
+    color: #ffffff;
+}
+
+body.dark-mode .avatar i {
+    color: #b197fc !important;
+}
+
+
+/* =====================================
+   DASHBOARD MAIN
+===================================== */
+
+body.dark-mode .dashboard-main {
+    background-color: #171522;
+}
+
+
+/* =====================================
+   WELCOME SECTION
+===================================== */
+
+body.dark-mode .welcome-section h1 {
+    color: #ffffff;
+}
+
+body.dark-mode .welcome-section p {
+    color: #aaa4b5;
+}
+
+
+/* =====================================
+   STAT CARDS
+===================================== */
+
+body.dark-mode .stat-cards {
+    background-color: #211d2d;
+    border-color: #383246;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-mode .stat-cards:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.30);
+}
+
+
+/* CARD TOP */
+
+body.dark-mode .stat-card-top span {
+    color: #c8c2d2;
+}
+
+
+/* ICON BOX */
+
+body.dark-mode .cgpa-icon,
+body.dark-mode .attendance-icon,
+body.dark-mode .pendingTasks-icon,
+body.dark-mode .studyHours-icon {
+    background-color: #302a3d;
+}
+
+
+/* STAT VALUES */
+
+body.dark-mode .stat-cards h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .stat-cards p {
+    color: #aaa4b5;
+}
+
+
+/* =====================================
+   DASHBOARD CARDS
+===================================== */
+
+body.dark-mode .dashboard-card {
+    background-color: #211d2d;
+    border-color: #383246;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =====================================
+   CARD HEADERS
+===================================== */
+
+body.dark-mode .card-header h3,
+body.dark-mode .class-header h3 {
+    color: #ffffff;
+}
+
+
+/* =====================================
+   CLASSES
+===================================== */
+
+body.dark-mode .class-item {
+    border-bottom-color: #383246;
+}
+
+body.dark-mode .class-time {
+    color: #aaa4b5;
+}
+
+body.dark-mode .class-subject {
+    color: #ffffff;
+}
+
+body.dark-mode .class-room {
+    color: #aaa4b5;
+}
+
+
+/* =====================================
+   TASKS
+===================================== */
+
+body.dark-mode .task-item {
+    border-bottom-color: #383246;
+}
+
+body.dark-mode .task-item span {
+    color: #ffffff;
+}
+
+body.dark-mode .task-item small {
+    color: #aaa4b5;
+}
+
+body.dark-mode .task-checkbox {
+    accent-color: #b197fc;
+}
+
+
+/* =====================================
+   TIMER
+===================================== */
+
+body.dark-mode .timer-circle {
+    border-color: #39304f;
+}
+
+body.dark-mode #timerDisplay {
+    color: #ffffff;
+}
+
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+body.dark-mode .small-btn,
+body.dark-mode .start-timer-btn {
+    background-color: #58409b;
+    color: #ffffff;
+}
+
+body.dark-mode .small-btn:hover,
+body.dark-mode .start-timer-btn:hover {
+    background-color: #6b50b5;
+}
+
+
+/* =====================================
+   MOBILE DARK MODE
+===================================== */
+
+@media (max-width: 700px) {
+
+    body.dark-mode .sidebar {
+        border-bottom-color: #383246;
+        border-right: none;
+    }
+
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/STP-Campus-Companion/CSS/dashboard.css">
+    <link rel="stylesheet" href="/STP-Campus-Companion/CSS/tasks.css">
+</head>
+<body class="dashboard-page">
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                 <i class="fa-solid fa-graduation-cap" style="color: rgb(70, 48, 133);"></i>
+                 <span>Campus Companion</span>
+            </div>
+            <nav>
+                <button onclick="showPage('dashboard')" >
+                    <i class="fa-solid fa-house-chimney" style="color: rgb(70, 48, 133);"></i>
+                    <span>Dashboard</span>
+                </button>
+                <button onclick="showPage('timetable')">
+                    <i class="fa-solid fa-calendar-days" style="color: rgb(70, 48, 133);"></i>
+                    <span>TimeTable</span>
+                </button>
+                <button onclick="showPage('tasks')" class="active">
+                    <i class="fa-solid fa-list-check" style="color: rgb(70, 48, 133);"></i>
+                    <span>Tasks</span>
+                </button>
+                <button onclick="showPage('attendance')">
+                    <i class="fa-solid fa-user-clock" style="color: rgb(70, 48, 133);"></i>
+                    <span>Attendance</span>
+                </button>
+                <button onclick="showPage('cgpa-calculator')">
+                    <i class="fa-solid fa-calculator" style="color: rgb(70, 48, 133);"></i>
+                    <span>CGPA Calculator</span>
+                </button>
+                <button onclick="showPage('notes')">
+                    <i class="fa-solid fa-file-pen" style="color: rgb(70, 48, 133);"></i>
+                    <span>Notes</span>
+                </button>
+                <button onclick="showPage('profile')">
+                    <i class="fa-regular fa-user" style="color: rgb(70, 48, 133);"></i>
+                    <span>Profile</span>
+                </button>
+            </nav>
+            <button class="logout" onclick="logoutBtn()">
+                <i class="fa-solid fa-arrow-right-from-bracket" style="color: rgb(70, 48, 133);"></i>
+                <span>Logout</span>
+            </button>
+        </aside>
+        <section class="dashboard-content">
+             <header class="dashboard-header">
+                <button class="menu-btn">
+                    <i class="fa-solid fa-bars" style="color: rgb(20, 20, 20);"></i>
+                </button>
+                <div class="dashboard-search">
+                    <i class="fa-brands fa-sistrix" style="color: rgb(177, 151, 252);"></i>
+                    <input type="text" id="dashboardSearch"
+                    placeholder="Search Anything">
+                </div>
+                <div class="dashboard-actions">
+                    <button class="theme-btn">
+                        <i class="fa-solid fa-moon" style="color: rgb(20, 20, 20);"></i>
+                    </button>
+                    <button class="notification-btn">
+                        <i class="fa-solid fa-bell" style="color: rgb(20, 20, 20);"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+                    <div class="user-info">
+                        <span class="avatar">
+                        <i class="fa-solid fa-circle-user" style="color: rgb(70, 48, 133);"></i>
+                    </span>
+                     <b id="topname">
+                        Student
+                     </b>
+                    </div> 
+                </div>
+            </header>
+            <div class="dashboard-main">
+                <div class="welcome-section">
+                    <h1>Tasks</h1>
+                </div>
+                <div class="dashboard-card task-form-card">
+                    <div class="card-header">
+                        <h3>Add New Task</h3>
+                    </div>
+                    <div class="task-form">
+                        <input type="text" id="taskName" placeholder="Enter task name">
+                        <input type="date" id="dueDate">
+                        <button class="small-btn" onclick="addTaskFromForm()"> 
+                            <i class="fa-solid fa-plus" style="color: rgb(177, 151, 252);"></i> 
+                        </button>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>My Tasks</h3>
+                    </div>
+                    <div class="task-header">
+                        <div>Task</div>
+                        <div>Due Date</div>
+                        <div>Status</div>
+                        <div>Action</div>
+                    </div>
+                    <div class="task-list" id="taskList">
+                    </div>
+                </div>
+            </div>
+        </section> 
+    </div>
+    <script src="/STP-Campus-Companion/JS/dashboard.js"></script>
+    <script src="/STP-Campus-Companion/JS/tasks.js"></script>
+</body>
+</html>

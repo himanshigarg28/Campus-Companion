@@ -1,0 +1,452 @@
+
+/* MAIN AREA */
+
+.dashboard-page .dashboard-main {
+    display: block;
+    padding: 30px 35px;
+}
+
+
+/* PAGE TITLE */
+
+.dashboard-page .welcome-section {
+    margin-bottom: 25px;
+}
+
+.dashboard-page .welcome-section h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #29243a;
+}
+
+
+/* =====================================
+   ALL TIMETABLE CARDS
+===================================== */
+
+.dashboard-page .dashboard-card {
+    width: 100%;
+    min-height: auto;
+
+    padding: 24px;
+
+    margin-bottom: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e4dfeb;
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(70, 48, 133, 0.05);
+}
+
+
+/*=====================================
+   ADD NEW CLASS
+===================================== */
+
+.dashboard-page .timetable-form-card {
+    margin-bottom: 24px;
+}
+
+
+/* CARD HEADING */
+
+.dashboard-page .card-header {
+    margin-bottom: 18px;
+}
+
+.dashboard-page .card-header h3 {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #29243a;
+}
+
+
+/* FORM */
+
+.dashboard-page .timetable-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+}
+
+
+/* INPUTS */
+
+.dashboard-page .timetable-form input,
+.dashboard-page .timetable-form select {
+    height: 44px;
+
+    padding: 0 13px;
+
+    border: 1px solid #ddd7e8;
+    border-radius: 7px;
+
+    background: #faf9fc;
+
+    color: #29243a;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: all 0.2s ease;
+}
+
+
+/* INPUT WIDTHS */
+
+.dashboard-page #subject {
+    flex: 2;
+}
+
+.dashboard-page #time {
+    flex: 1.2;
+}
+
+.dashboard-page #room {
+    flex: 1.2;
+}
+
+.dashboard-page #day {
+    flex: 1.2;
+}
+
+
+/* INPUT HOVER */
+
+.dashboard-page .timetable-form input:hover,
+.dashboard-page .timetable-form select:hover {
+    border-color: #b197fc;
+}
+
+
+/* INPUT FOCUS */
+
+.dashboard-page .timetable-form input:focus,
+.dashboard-page .timetable-form select:focus {
+    border-color: #8f75d4;
+
+    background: #ffffff;
+
+    box-shadow: 0 0 0 3px rgba(143, 117, 212, 0.12);
+}
+
+
+/* PLACEHOLDER */
+
+.dashboard-page .timetable-form input::placeholder {
+    color: #9993a2;
+}
+
+
+/*=====================================
+   ADD BUTTON
+===================================== */
+
+.dashboard-page .timetable-form .small-btn {
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+    margin: 0;
+
+    flex-shrink: 0;
+
+    border-radius: 7px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #463085;
+}
+
+.dashboard-page .timetable-form .small-btn i {
+    color: white !important;
+    font-size: 15px;
+}
+
+.dashboard-page .timetable-form .small-btn:hover {
+    background: #35236d;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 4px 10px rgba(70, 48, 133, 0.2);
+}
+
+
+/* =====================================
+   CLASS SCHEDULE
+===================================== */
+
+.dashboard-page .timetable-header {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        1.2fr
+        2fr
+        1.2fr
+        0.7fr;
+
+    align-items: center;
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    background: #f3effa;
+
+    border-radius: 8px;
+
+    color: #463085;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================
+   CLASS ROWS
+===================================== */
+
+.dashboard-page .classes-list {
+    width: 100%;
+}
+
+.dashboard-page .classes-list .class-item {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        1.2fr
+        2fr
+        1.2fr
+        0.7fr;
+
+    align-items: center;
+
+    min-height: 58px;
+
+    padding: 0 16px;
+
+    border-bottom: 1px solid #eeeaf2;
+
+    background: white;
+
+    font-size: 14px;
+
+    transition: background 0.2s ease;
+}
+
+
+/* ROW HOVER */
+
+.dashboard-page .classes-list .class-item:hover {
+    background: #faf9fd;
+}
+
+
+/* LAST ROW */
+
+.dashboard-page .classes-list .class-item:last-child {
+    border-bottom: none;
+}
+
+
+/* =====================================
+   ROW TEXT
+===================================== */
+
+.dashboard-page .classes-list .class-item div {
+    color: #55515f;
+}
+
+
+/* DAY */
+
+.dashboard-page .classes-list .class-item div:nth-child(1) {
+    color: #463085;
+    font-weight: 600;
+}
+
+
+/* TIME */
+
+.dashboard-page .classes-list .class-item div:nth-child(2) {
+    color: #66616d;
+}
+
+
+/* SUBJECT */
+
+.dashboard-page .classes-list .class-item div:nth-child(3) {
+    color: #29243a;
+    font-weight: 600;
+}
+
+
+/* ROOM */
+
+.dashboard-page .classes-list .class-item div:nth-child(4) {
+    color: #66616d;
+}
+
+
+/* =====================================
+   DELETE BUTTON
+===================================== */
+
+.dashboard-page .classes-list .class-item button {
+    width: 32px;
+    height: 32px;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #fdf0f2;
+
+    color: #d95368;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.2s ease;
+}
+
+.dashboard-page .classes-list .class-item button:hover {
+    background: #3b0646;
+    color: white;
+}
+
+.dashboard-page .classes-list .class-item button i {
+    font-size: 13px;
+}
+
+
+/* =====================================
+   EMPTY SCHEDULE
+===================================== */
+
+.dashboard-page .classes-list:empty::before {
+    content: "No classes added yet";
+
+    display: block;
+
+    padding: 35px;
+
+    text-align: center;
+
+    color: #9993a2;
+
+    font-size: 14px;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+
+    .dashboard-page .dashboard-main {
+        padding: 25px;
+    }
+
+    .dashboard-page .timetable-form {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard-page #subject,
+    .dashboard-page #time,
+    .dashboard-page #room,
+    .dashboard-page #day {
+        flex: none;
+    }
+
+    .dashboard-page .timetable-form .small-btn {
+        width: 100%;
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+    .dashboard-page .dashboard-main {
+        padding: 20px 15px;
+    }
+
+    .dashboard-page .dashboard-card {
+        padding: 18px;
+    }
+
+    .dashboard-page .welcome-section h1 {
+        font-size: 25px;
+    }
+
+    .dashboard-page .timetable-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dashboard-page .timetable-form input,
+    .dashboard-page .timetable-form select,
+    .dashboard-page .timetable-form .small-btn {
+        width: 100%;
+    }
+
+    .dashboard-page .timetable-header {
+        display: none;
+    }
+
+    .dashboard-page .classes-list .class-item {
+        position: relative;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 8px;
+
+        padding: 15px;
+
+        margin-bottom: 10px;
+
+        border: 1px solid #e4dfeb;
+
+        border-radius: 8px;
+    }
+
+    .dashboard-page .classes-list .class-item div:nth-child(3) {
+        grid-column: span 2;
+    }
+
+    .dashboard-page .classes-list .class-item div:nth-child(5) {
+        position: absolute;
+
+        right: 12px;
+        top: 12px;
+    }
+}
+

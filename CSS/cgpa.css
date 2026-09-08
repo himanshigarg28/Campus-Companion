@@ -1,0 +1,591 @@
+/* =====================================================
+   CGPA PAGE
+===================================================== */
+
+.cgpa-page .dashboard-content .dashboard-main {
+    display: block !important;
+    width: 100%;
+    padding: 30px 35px;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   PAGE TITLE
+===================================================== */
+
+.cgpa-page .cgpa-page-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.cgpa-page .cgpa-page-title h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #29243a;
+}
+
+.cgpa-page .cgpa-page-title p {
+    margin-top: 6px;
+    color: #77727f;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   SUBJECT LIMIT
+===================================================== */
+
+.cgpa-page .subject-limit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 15px;
+
+    background-color: white;
+    border: 1px solid #ddd7e8;
+    border-radius: 8px;
+
+    color: #463085;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   COMMON CARD
+===================================================== */
+
+.cgpa-page .cgpa-card {
+    width: 100%;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    background-color: white;
+
+    border: 1px solid #e4dfeb;
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   ADD SUBJECT CARD
+===================================================== */
+
+.cgpa-page .add-cgpa-card {
+    margin-bottom: 20px;
+}
+
+.cgpa-page .cgpa-card-header {
+    margin-bottom: 20px;
+}
+
+.cgpa-page .cgpa-card-header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #29243a;
+}
+
+.cgpa-page .cgpa-card-header p {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #77727f;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.cgpa-page .cgpa-form {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr
+        auto;
+
+    gap: 15px;
+
+    align-items: end;
+}
+
+
+/* =====================================================
+   INPUT GROUP
+===================================================== */
+
+.cgpa-page .cgpa-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.cgpa-page .cgpa-input-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #55515f;
+}
+
+.cgpa-page .cgpa-input-group input {
+    width: 100%;
+    height: 44px;
+
+    padding: 0 13px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #ddd7e8;
+    border-radius: 7px;
+
+    outline: none;
+
+    background-color: white;
+
+    font-size: 13px;
+    color: #29243a;
+}
+
+.cgpa-page .cgpa-input-group input:focus {
+    border-color: #7b65c7;
+
+    box-shadow:
+        0 0 0 2px rgba(70, 48, 133, 0.08);
+}
+
+.cgpa-page .cgpa-input-group input::placeholder {
+    color: #999;
+}
+
+
+/* =====================================================
+   ADD SUBJECT BUTTON
+===================================================== */
+
+.cgpa-page .add-subject-btn {
+    height: 44px;
+
+    padding: 0 20px;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #463085;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.cgpa-page .add-subject-btn:hover {
+    background-color: #35236d;
+}
+
+.cgpa-page .add-subject-btn i {
+    margin-right: 6px;
+    color: white !important;
+}
+
+
+/* =====================================================
+   INFORMATION NOTE
+===================================================== */
+
+.cgpa-page .cgpa-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 18px;
+    padding-top: 15px;
+
+    border-top: 1px solid #eeeaf2;
+
+    color: #77727f;
+    font-size: 12px;
+}
+
+.cgpa-page .cgpa-note i {
+    color: #7c65c8;
+}
+
+
+/* =====================================================
+   RESULT GRID
+===================================================== */
+
+.cgpa-page .cgpa-result-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   CGPA RESULT CARD
+===================================================== */
+
+.cgpa-page .cgpa-result-card {
+    min-height: 180px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.cgpa-page .cgpa-result-card h2 {
+    margin: 0;
+
+    font-size: 17px;
+    color: #29243a;
+}
+
+.cgpa-page .cgpa-number {
+    margin: 10px 0 4px;
+}
+
+.cgpa-page .cgpa-number span {
+    font-size: 42px;
+
+    font-weight: 700;
+
+    color: #463085;
+}
+
+.cgpa-page .cgpa-result-text {
+    margin: 0;
+
+    font-size: 12px;
+
+    color: #77727f;
+}
+
+
+/* =====================================================
+   SMALL RESULT CARDS
+===================================================== */
+
+.cgpa-page .result-small-card {
+    min-height: 180px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.cgpa-page .result-icon {
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background-color: #f0ecf7;
+}
+
+.cgpa-page .result-icon i {
+    font-size: 20px;
+    color: #463085;
+}
+
+.cgpa-page .result-small-card p {
+    margin: 0 0 5px;
+
+    font-size: 13px;
+
+    color: #77727f;
+}
+
+.cgpa-page .result-small-card h3 {
+    margin: 0;
+
+    font-size: 25px;
+
+    color: #29243a;
+}
+
+
+/* =====================================================
+   SUBJECT TABLE CARD
+===================================================== */
+
+.cgpa-page .subjects-table-card {
+    margin-bottom: 20px;
+}
+
+.cgpa-page .subjects-table-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.cgpa-page .subjects-table-header h2 {
+    margin: 0;
+
+    font-size: 18px;
+
+    color: #29243a;
+}
+
+.cgpa-page .subjects-table-header p {
+    margin-top: 5px;
+
+    font-size: 12px;
+
+    color: #77727f;
+}
+
+
+/* =====================================================
+   RESET BUTTON
+===================================================== */
+
+.cgpa-page .reset-btn {
+    padding: 9px 14px;
+
+    border: 1px solid #ead4d4;
+    border-radius: 7px;
+
+    background-color: #fff6f6;
+
+    color: #d13333;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.cgpa-page .reset-btn:hover {
+    background-color: #fdeaea;
+}
+
+
+/* =====================================================
+   SUBJECT TABLE
+===================================================== */
+
+.cgpa-page .cgpa-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cgpa-page .cgpa-table th {
+    padding: 12px 10px;
+
+    text-align: left;
+
+    background-color: #f7f5fb;
+
+    border-bottom: 1px solid #e4dfeb;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #66616d;
+}
+
+.cgpa-page .cgpa-table td {
+    padding: 14px 10px;
+
+    border-bottom: 1px solid #eeeaf2;
+
+    font-size: 13px;
+
+    color: #444;
+}
+
+.cgpa-page .cgpa-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   GRADE POINT
+===================================================== */
+
+.cgpa-page .grade-point {
+    font-weight: 700;
+    color: #463085;
+}
+
+
+/* =====================================================
+   DELETE BUTTON
+===================================================== */
+
+.cgpa-page .delete-subject-btn {
+    width: 32px;
+    height: 32px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #fff3f3;
+
+    color: #d13333;
+
+    cursor: pointer;
+}
+
+.cgpa-page .delete-subject-btn:hover {
+    background-color: #fde1e1;
+}
+
+
+/* =====================================================
+   EMPTY MESSAGE
+===================================================== */
+
+.cgpa-page .cgpa-empty {
+    padding: 45px 20px;
+
+    text-align: center;
+
+    color: #888;
+}
+
+.cgpa-page .cgpa-empty i {
+    font-size: 35px;
+
+    margin-bottom: 12px;
+
+    color: #c9c2d8;
+}
+
+.cgpa-page .cgpa-empty p {
+    margin: 0 0 5px;
+
+    font-size: 14px;
+
+    color: #66616d;
+}
+
+.cgpa-page .cgpa-empty small {
+    font-size: 12px;
+
+    color: #999;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .cgpa-page .cgpa-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cgpa-page .add-subject-btn {
+        width: 100%;
+    }
+
+    .cgpa-page .cgpa-result-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cgpa-page .cgpa-result-card {
+        grid-column: span 2;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .cgpa-page .dashboard-content .dashboard-main {
+        padding: 20px !important;
+    }
+
+    .cgpa-page .cgpa-page-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .cgpa-page .cgpa-page-title h1 {
+        font-size: 25px;
+    }
+
+    .cgpa-page .cgpa-form {
+        grid-template-columns: 1fr;
+    }
+
+    .cgpa-page .cgpa-result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cgpa-page .cgpa-result-card {
+        grid-column: span 1;
+    }
+
+    .cgpa-page .subjects-table-card {
+        overflow-x: auto;
+    }
+
+    .cgpa-page .cgpa-table {
+        min-width: 600px;
+    }
+
+    .cgpa-page .subjects-table-header {
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+
+    .cgpa-page .dashboard-content .dashboard-main {
+        padding: 15px !important;
+    }
+
+    .cgpa-page .cgpa-card {
+        padding: 18px;
+    }
+
+    .cgpa-page .cgpa-number span {
+        font-size: 36px;
+    }
+}
+

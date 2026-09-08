@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/STP-Campus-Companion/CSS/dashboard.css">
+    <link rel="stylesheet" href="/STP-Campus-Companion/CSS/attendance.css">
+</head>
+<body class="dashboard-page">
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                 <i class="fa-solid fa-graduation-cap" style="color: rgb(70, 48, 133);"></i>
+                 <span>Campus Companion</span>
+            </div>
+            <nav>
+                <button onclick="showPage('dashboard')">
+                    <i class="fa-solid fa-house-chimney" style="color: rgb(70, 48, 133);"></i>
+                    <span>Dashboard</span>
+                </button>
+                <button onclick="showPage('timetable')">
+                    <i class="fa-solid fa-calendar-days" style="color: rgb(70, 48, 133);"></i>
+                    <span>TimeTable</span>
+                </button>
+                <button onclick="showPage('tasks')">
+                    <i class="fa-solid fa-list-check" style="color: rgb(70, 48, 133);"></i>
+                    <span>Tasks</span>
+                </button>
+                <button onclick="showPage('attendance')" class="active">
+                    <i class="fa-solid fa-user-clock" style="color: rgb(70, 48, 133);"></i>
+                    <span>Attendance</span>
+                </button>
+                <button onclick="showPage('cgpa-calculator')">
+                    <i class="fa-solid fa-calculator" style="color: rgb(70, 48, 133);"></i>
+                    <span>CGPA Calculator</span>
+                </button>
+                <button onclick="showPage('notes')">
+                    <i class="fa-solid fa-file-pen" style="color: rgb(70, 48, 133);"></i>
+                    <span>Notes</span>
+                </button>
+                <button onclick="showPage('profile')">
+                    <i class="fa-regular fa-user" style="color: rgb(70, 48, 133);"></i>
+                    <span>Profile</span>
+                </button>
+            </nav>
+            <button class="logout" onclick="logoutBtn()">
+                <i class="fa-solid fa-arrow-right-from-bracket" style="color: rgb(70, 48, 133);"></i>
+                <span>Logout</span>
+            </button>
+        </aside>
+        <section class="dashboard-content">
+            <header class="dashboard-header">
+                <button class="menu-btn">
+                    <i class="fa-solid fa-bars" style="color: rgb(20, 20, 20);"></i>
+                </button>
+                <div class="dashboard-search">
+                    <i class="fa-brands fa-sistrix" style="color: rgb(177, 151, 252);"></i>
+                    <input type="text" id="dashboardSearch"
+                    placeholder="Search Anything">
+                </div>
+                <div class="dashboard-actions">
+                    <button class="theme-btn">
+                        <i class="fa-solid fa-moon" style="color: rgb(20, 20, 20);"></i>
+                    </button>
+                    <button class="notification-btn">
+                        <i class="fa-solid fa-bell" style="color: rgb(20, 20, 20);"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+                    <div class="user-info">
+                        <span class="avatar">
+                        <i class="fa-solid fa-circle-user" style="color: rgb(70, 48, 133);"></i>
+                    </span>
+                     <b id="topname">
+                        Student
+                     </b>
+                    </div> 
+                </div>
+            </header>
+           
+            <main class="dashboard-main">
+                <div class="attendance-top">
+                    <div>
+                        <h1>Attendance</h1>
+                    </div>
+                    <div class="semester-display">
+                        <span id="semester">
+                            Semester
+                        </span>
+                    </div>
+                </div>
+                <div class="attendance-card add-subject-card">
+                    <h2>
+                        Add Subjects
+                    </h2>
+                    <div class="subject-form">
+                        <input
+                            type="text"
+                            id="subjectName"
+                            placeholder="Enter subject name">
+                        <input
+                            type="number"
+                            id="initialHeld"
+                            placeholder="Classes already held"
+                            min="0">
+                        <input
+                            type="number"
+                            id="initialAttended"
+                            placeholder="Classes already attended"
+                            min="0">
+                        <button onclick="addSubjectFromForm()">
+                            <i class="fa-solid fa-plus" style="color: rgb(177, 151, 252);"></i>
+                            Add Subject
+                        </button>
+                    </div>
+                     
+                    <div class="my-subjects">
+                        <h3>
+                            My Subjects
+                        </h3>
+                        <div id="subjectList"></div>
+                    </div>
+                </div>
+                <!-- OVERVIEW -->
+                <div class="attendance-overview">
+                    <div class="attendance-card overall-card">
+                        <h2>
+                            Overall Attendance
+                        </h2>
+                        <div class="overall-content">
+                            <div
+                                class="attendance-circle"
+                                id="attendanceCircle">
+                                <div class="circle-content">
+                                    <span id="overallPercentage">
+                                        0%
+                                    </span>
+                                    <small>
+                                        Overall Attendance
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="attendance-stats">
+                                <div class="stat-row">
+                                    <span>
+                                        <i class="fa-solid fa-circle" style="color: rgb(91, 75, 136);"></i>
+                                        Classes Held
+                                    </span>
+                                    <strong id="classesHeld">
+                                        0
+                                    </strong>
+                                </div>
+                                <div class="stat-row">
+                                    <span>
+                                    <i class="fa-solid fa-circle" style="color: rgb(99, 230, 190);"></i>
+                                        Classes Attended
+                                    </span>
+                                    <strong id="classesAttended">
+                                        0
+                                    </strong>
+                                </div>
+                                <div class="stat-row">
+                                    <span>
+                                        <i class="fa-solid fa-circle" style="color: rgb(209, 51, 51);"></i>
+                                        Classes Missed
+                                    </span>
+                                    <strong id="classesMissed">
+                                        0
+                                    </strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SUBJECT ATTENDANCE -->
+                    <div class="attendance-card subject-card">
+                        <h2>
+                            Subject-wise Attendance
+                        </h2>
+                        <div id="attendanceList"></div>
+                    </div>
+                </div>
+                <!-- TODAY'S CLASSES -->
+                <div class="attendance-card today-card">
+                    <h2>
+                        Today's Classes
+                    </h2>
+                    <p
+                        class="today-name"
+                        id="todayName">
+                    </p>
+                    <div id="todayClasses"></div>
+                </div>
+                <!-- ALL CLASSES -->
+                <div class="attendance-card timetable-attendance-card">
+                    <h2>
+                        My Classes
+                    </h2>
+                    <div id="allClasses"></div>
+                </div>
+            </main>
+
+        </section>
+    </div>
+    <script src="/STP-Campus-Companion/JS/dashboard.js"></script>
+    <script src="/STP-Campus-Companion/JS/attendance.js"></script>
+</body>

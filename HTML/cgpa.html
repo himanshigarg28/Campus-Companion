@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/STP-Campus-Companion/CSS/dashboard.css">
+    <link rel="stylesheet" href="/STP-Campus-Companion/CSS/cgpa.css">
+</head>
+<body class="dashboard-page cgpa-page">
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <i class="fa-solid fa-graduation-cap"
+               style="color: rgb(70, 48, 133);"></i>
+            <span>Campus Companion</span>
+        </div>
+        <nav>
+            <button onclick="showPage('dashboard')">
+                <i class="fa-solid fa-house-chimney"
+                   style="color: rgb(70, 48, 133);"></i>
+                <span>Dashboard</span>
+            </button>
+            <button onclick="showPage('timetable')">
+                <i class="fa-solid fa-calendar-days"
+                   style="color: rgb(70, 48, 133);"></i>
+                <span>TimeTable</span>
+            </button>
+            <button onclick="showPage('tasks')">
+                <i class="fa-solid fa-list-check"
+                   style="color: rgb(70, 48, 133);"></i>
+                <span>Tasks</span>
+            </button>
+            <button onclick="showPage('attendance')">
+                <i class="fa-solid fa-user-clock"
+                   style="color: rgb(70, 48, 133);"></i>
+                <span>Attendance</span>
+            </button>
+            <button onclick="showPage('cgpa-calculator')" class="active">
+                <i class="fa-solid fa-calculator" style="color: rgb(70, 48, 133);"></i>
+                <span>CGPA Calculator</span>
+            </button>
+            <button onclick="showPage('notes')">
+                <i class="fa-solid fa-file-pen"
+                   style="color: rgb(70, 48, 133);"></i>
+                <span>Notes</span>
+            </button>
+            <button onclick="showPage('profile')">
+                <i class="fa-regular fa-user"
+                   style="color: rgb(70, 48, 133);"></i>
+                <span>Profile</span>
+            </button>
+        </nav>
+        <button class="logout"
+                onclick="logoutBtn()">
+            <i class="fa-solid fa-arrow-right-from-bracket"
+               style="color: rgb(70, 48, 133);"></i>
+            <span>Logout</span>
+        </button>
+    </aside>
+
+    <section class="dashboard-content">
+        <header class="dashboard-header">
+            <button class="menu-btn">
+                <i class="fa-solid fa-bars"
+                   style="color: rgb(20, 20, 20);"></i>
+            </button>
+            <div class="dashboard-search">
+                <i class="fa-solid fa-magnifying-glass"
+                   style="color: rgb(177, 151, 252);"></i>
+                <input
+                    type="text"
+                    id="dashboardSearch"
+                    placeholder="Search Anything">
+            </div>
+            <div class="dashboard-actions">
+                <button class="theme-btn">
+                    <i class="fa-solid fa-moon"
+                       style="color: rgb(20, 20, 20);"></i>
+                </button>
+                <button class="notification-btn">
+                    <i class="fa-solid fa-bell"
+                       style="color: rgb(20, 20, 20);"></i>
+                    <span class="notification-dot"></span>
+                </button>
+                <div class="user-info">
+                    <span class="avatar">
+                        <i class="fa-solid fa-circle-user"
+                           style="color: rgb(70, 48, 133);"></i>
+                    </span>
+                    <b id="topname">
+                        Student
+                    </b>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-main">
+            <div class="cgpa-page-title">
+                <div>
+                    <h1>CGPA Calculator</h1>
+                </div>
+                <div class="subject-limit">
+                    <i class="fa-solid fa-book"></i>
+                    <span id="subjectCount">
+                        0 / 20 Subjects
+                    </span>
+                </div>
+            </div>
+
+            <!-- Add Subject -->
+            <div class="cgpa-card add-cgpa-card">
+                <div class="cgpa-card-header">
+                    <div>
+                        <h2>Add Subject</h2> 
+                    </div>
+                </div>
+                <div class="cgpa-form">
+                    <div class="cgpa-input-group">
+                        <label for="subjectName">
+                            Subject Name
+                        </label>
+                        <input
+                            type="text"
+                            id="subjectName"
+                            placeholder="e.g. Data Structures">
+                    </div>
+                    <div class="cgpa-input-group">
+                        <label for="marks">
+                            Marks
+                        </label>
+                        <input
+                            type="number"
+                            id="marks"
+                            placeholder="0 - 100"
+                            min="0"
+                            max="100">
+                    </div>
+                    <div class="cgpa-input-group">
+                        <label for="credits">
+                            Credits
+                        </label>
+                        <input
+                            type="number"
+                            id="credits"
+                            placeholder="e.g. 4"
+                            min="1"
+                            max="20">
+                    </div>
+                    <button
+                        class="add-subject-btn"
+                        onclick="addCGPASubject()">
+                        <i class="fa-solid fa-plus"></i>
+                        Add Subject
+                    </button>
+                </div>
+                <div class="cgpa-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>
+                        You can add a maximum of 20 subjects.
+                    </span>
+                </div>
+            </div>
+
+            <!-- CGPA Result -->
+            <div class="cgpa-result-grid">
+                <div class="cgpa-card cgpa-result-card">
+                    <h2>
+                        Your CGPA
+                    </h2>
+                    <div class="cgpa-number">
+                        <span id="cgpaValue">
+                            0.00
+                        </span>
+                    </div>
+                    <p class="cgpa-result-text">
+                        Current Semester CGPA
+                    </p>
+                </div>
+
+                <!-- Total Credits -->
+                <div class="cgpa-card result-small-card">
+                    <div class="result-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div>
+                        <p>
+                            Total Credits
+                        </p>
+                        <h3 id="totalCredits">
+                            0
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Subjects -->
+                <div class="cgpa-card result-small-card">
+                    <div class="result-icon">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <div>
+                        <p>
+                            Subjects
+                        </p>
+                        <h3 id="totalSubjects">
+                            0
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subject Table -->
+            <div class="cgpa-card subjects-table-card">
+                <div class="subjects-table-header">
+                    <div>
+                        <h2>
+                            Subject Details
+                        </h2>
+                    </div>
+                    <button
+                        class="reset-btn"
+                        onclick="resetCGPA()">
+                        <i class="fa-solid fa-trash"></i>
+                        Reset All
+                    </button>
+                </div>
+                <div id="cgpaSubjectList">
+                    <div class="cgpa-empty">
+                        <i class="fa-solid fa-book-open"></i>
+                        <p>
+                            No subjects added yet.
+                        </p>
+                        <small>
+                            Add your first subject above.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+</div>
+<script src="/STP-Campus-Companion/JS/dashboard.js"></script>
+<script src="/STP-Campus-Companion/JS/cgpa.js"></script>
+</body>
+</html>

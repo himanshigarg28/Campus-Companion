@@ -1,0 +1,403 @@
+/* =====================================
+   PROFILE PAGE
+===================================== */
+
+.dashboard-page .dashboard-main {
+    display: block !important;
+    width: 100%;
+    padding: 30px 45px;
+}
+
+
+/* =====================================
+   PROFILE PAGE TITLE
+===================================== */
+
+.dashboard-page .profile-page-title {
+    margin-bottom: 25px;
+}
+
+.dashboard-page .profile-page-title h1 {
+    margin: 0;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    color: #29243a;
+}
+
+
+/* =====================================
+   PROFILE HEADER CARD
+===================================== */
+
+.dashboard-page .profile-header-card {
+    width: 100%;
+
+    padding: 30px;
+
+    margin-bottom: 20px;
+
+    background-color: white;
+
+    border: 1px solid #e4dfeb;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* =====================================
+   PROFILE AVATAR
+===================================== */
+
+.dashboard-page .profile-avatar {
+    width: 80px;
+    height: 80px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background-color: #eee9fa;
+
+    color: #463085;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-page .profile-avatar i {
+    font-size: 35px;
+}
+
+
+/* =====================================
+   PROFILE NAME
+===================================== */
+
+.dashboard-page .profile-header-info h2 {
+    margin: 0 0 6px 0;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    color: #29243a;
+}
+
+.dashboard-page .profile-header-info p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #77727f;
+}
+
+
+/* =====================================
+   GENERAL PROFILE CARD
+===================================== */
+
+.dashboard-page .profile-card {
+    width: 100%;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    background-color: white;
+
+    border: 1px solid #e4dfeb;
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(70, 48, 133, 0.03);
+}
+
+
+/* =====================================
+   PERSONAL INFORMATION TITLE
+===================================== */
+
+.dashboard-page .profile-card-title {
+    margin-bottom: 20px;
+}
+
+.dashboard-page .profile-card-title h2 {
+    margin: 0;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    color: #29243a;
+}
+
+
+/* =====================================
+   INFORMATION GRID
+===================================== */
+
+.dashboard-page .profile-info-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =====================================
+   INFORMATION BOX
+===================================== */
+
+.dashboard-page .profile-info-box {
+    min-height: 90px;
+
+    padding: 18px;
+
+    background-color: #faf9fd;
+
+    border: 1px solid #eeeaf2;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 8px;
+}
+
+
+/* =====================================
+   INFORMATION LABEL
+===================================== */
+
+.dashboard-page .profile-label {
+    font-size: 13px;
+
+    color: #77727f;
+}
+
+
+/* =====================================
+   INFORMATION VALUE
+===================================== */
+
+.dashboard-page .profile-info-box strong {
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #29243a;
+}
+
+
+/* =====================================
+   EDIT PROFILE BUTTON
+===================================== */
+
+.dashboard-page .edit-profile-btn {
+    padding: 11px 20px;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #463085;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    transition: 0.2s ease;
+}
+
+.dashboard-page .edit-profile-btn:hover {
+    background-color: #35236d;
+}
+
+.dashboard-page .edit-profile-btn i {
+    font-size: 12px;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+
+    .dashboard-page .dashboard-main {
+        padding: 25px 30px;
+    }
+
+    .dashboard-page .profile-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 700px) {
+
+    .dashboard-page .dashboard-main {
+        display: block !important;
+
+        padding: 20px 15px;
+    }
+
+    .dashboard-page .profile-page-title h1 {
+        font-size: 26px;
+    }
+
+    .dashboard-page .profile-header-card {
+        padding: 25px;
+    }
+
+    .dashboard-page .profile-avatar {
+        width: 65px;
+        height: 65px;
+    }
+
+    .dashboard-page .profile-avatar i {
+        font-size: 28px;
+    }
+
+    .dashboard-page .profile-header-info h2 {
+        font-size: 21px;
+    }
+
+    .dashboard-page .profile-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-page .profile-card {
+        padding: 20px;
+    }
+
+}
+
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 450px) {
+
+    .dashboard-page .profile-header-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dashboard-page .profile-card {
+        padding: 18px;
+    }
+
+}
+/* =====================================
+   PROFILE DARK MODE
+===================================== */
+
+body.dark-mode .dashboard-main {
+    background-color: #171522 !important;
+}
+
+body.dark-mode .profile-page-title h1 {
+    color: #ffffff !important;
+}
+
+
+/* PROFILE HEADER */
+
+body.dark-mode .profile-header-card {
+    background-color: #211d2d !important;
+    border-color: #383246 !important;
+}
+
+
+/* PROFILE AVATAR */
+
+body.dark-mode .profile-avatar {
+    background-color: #302a3d !important;
+    color: #b197fc !important;
+}
+
+
+/* PROFILE NAME */
+
+body.dark-mode .profile-header-info h2 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .profile-header-info p {
+    color: #aaa4b5 !important;
+}
+
+
+/* PERSONAL INFORMATION CARD */
+
+body.dark-mode .profile-card {
+    background-color: #211d2d !important;
+    border-color: #383246 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.20) !important;
+}
+
+
+/* PERSONAL INFORMATION HEADING */
+
+body.dark-mode .profile-card-title h2 {
+    color: #ffffff !important;
+}
+
+
+/* INFORMATION BOXES */
+
+body.dark-mode .profile-info-box {
+    background-color: #2a2536 !important;
+    border-color: #40394d !important;
+}
+
+
+/* LABEL */
+
+body.dark-mode .profile-label {
+    color: #aaa4b5 !important;
+}
+
+
+/* VALUE */
+
+body.dark-mode .profile-info-box strong {
+    color: #ffffff !important;
+}
+
+
+/* EDIT BUTTON */
+
+body.dark-mode .edit-profile-btn {
+    background-color: #58409b !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .edit-profile-btn:hover {
+    background-color: #6b50b5 !important;
+}

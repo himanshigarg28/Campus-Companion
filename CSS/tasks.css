@@ -1,0 +1,494 @@
+
+/* TASK PAGE */
+
+.dashboard-page .dashboard-main {
+    display: block;
+    padding: 30px 35px;
+}
+
+
+/* =====================================
+   PAGE TITLE
+===================================== */
+
+.dashboard-page .welcome-section {
+    margin-bottom: 25px;
+}
+
+.dashboard-page .welcome-section h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #29243a;
+}
+
+
+/* =====================================
+   ALL TASK CARDS
+===================================== */
+
+.dashboard-page .dashboard-card {
+    width: 100%;
+    min-height: auto;
+
+    padding: 24px;
+
+    margin-bottom: 24px;
+
+    background-color: white;
+
+    border: 1px solid #e4dfeb;
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(70, 48, 133, 0.05);
+}
+
+
+/* =====================================
+   ADD NEW TASK CARD
+===================================== */
+
+.dashboard-page .task-form-card {
+    margin-bottom: 24px;
+}
+
+
+/* =====================================
+   CARD HEADING
+===================================== */
+
+.dashboard-page .card-header {
+    margin-bottom: 20px;
+}
+
+.dashboard-page .card-header h3 {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #29243a;
+}
+
+
+/* =====================================
+   TASK FORM
+===================================== */
+
+.dashboard-page .task-form {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0;
+}
+
+
+/* =====================================
+   TASK INPUT
+===================================== */
+
+.dashboard-page .task-form input {
+    height: 44px;
+
+    padding: 0 14px;
+
+    border: 1px solid #ddd7e8;
+    border-radius: 7px;
+
+    background-color: #faf9fc;
+
+    color: #29243a;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: all 0.2s ease;
+}
+
+
+/* Task name */
+
+.dashboard-page .task-form input[type="text"] {
+    flex: 2;
+}
+
+
+/* Date */
+
+.dashboard-page .task-form input[type="date"] {
+    flex: 1.2;
+}
+
+
+/* Hover */
+
+.dashboard-page .task-form input:hover {
+    border-color: #b197fc;
+}
+
+
+/* Focus */
+
+.dashboard-page .task-form input:focus {
+    border-color: #8f75d4;
+
+    background-color: white;
+
+    box-shadow: 0 0 0 3px rgba(143, 117, 212, 0.12);
+}
+
+
+/* =====================================
+   ADD BUTTON
+===================================== */
+
+.dashboard-page .task-form button {
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+    margin: 0;
+
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #463085;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.dashboard-page .task-form button:hover {
+    background-color: #35236d;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 4px 10px rgba(70, 48, 133, 0.2);
+}
+
+
+.dashboard-page .task-form button i {
+    color: white !important;
+    font-size: 15px;
+}
+
+
+/* =====================================
+   MY TASKS HEADER
+===================================== */
+
+.dashboard-page .task-header {
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1.2fr
+        1fr
+        0.7fr;
+
+    align-items: center;
+
+    gap: 15px;
+
+    width: 100%;
+
+    padding: 14px 18px;
+
+    box-sizing: border-box;
+
+    background-color: #f3effa;
+
+    border-radius: 8px;
+
+    color: #463085;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================
+   TASK ROW
+===================================== */
+
+.dashboard-page .task-item {
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1.2fr
+        1fr
+        0.7fr;
+
+    align-items: center;
+
+    gap: 15px;
+
+    width: 100%;
+
+    min-height: 58px;
+
+    padding: 0 18px;
+
+    box-sizing: border-box;
+
+    background-color: white;
+
+    border-bottom: 1px solid #eeeaf2;
+
+    font-size: 14px;
+
+    color: #55515f;
+
+    transition: background-color 0.2s ease;
+}
+
+
+/* Hover */
+
+.dashboard-page .task-item:hover {
+    background-color: #faf9fd;
+}
+
+
+/* Last row */
+
+.dashboard-page .task-item:last-child {
+    border-bottom: none;
+}
+
+
+/* =====================================
+   TASK NAME
+===================================== */
+
+.dashboard-page .task-name {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #29243a;
+
+    font-weight: 600;
+}
+
+
+/* Checkbox */
+
+.dashboard-page .task-name input {
+    width: 17px;
+    height: 17px;
+
+    margin: 0;
+
+    cursor: pointer;
+
+    accent-color: #463085;
+}
+
+
+/* =====================================
+   COMPLETED TASK
+===================================== */
+
+.dashboard-page .task-name input:checked + span {
+    color: #9993a2;
+
+    text-decoration: line-through;
+}
+
+
+/* =====================================
+   DATE
+===================================== */
+
+.dashboard-page .task-item div:nth-child(2) {
+    color: #66616d;
+}
+
+
+/* =====================================
+   STATUS
+===================================== */
+
+.dashboard-page .task-item div:nth-child(3) {
+    color: #463085;
+
+    font-weight: 500;
+}
+
+
+/* =====================================
+   DELETE BUTTON
+===================================== */
+
+.dashboard-page .task-item button {
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #fff0f2;
+
+    color: #d95368;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.dashboard-page .task-item button:hover {
+    background-color: #3b0646;
+
+    color: white;
+}
+
+
+.dashboard-page .task-item button i {
+    color: #d95368;
+    font-size: 13px;
+}
+
+
+.dashboard-page .task-item button:hover i {
+    color: white;
+}
+
+
+/* =====================================
+   EMPTY TASK LIST
+===================================== */
+
+.dashboard-page .task-list:empty::before {
+    content: "No tasks added yet";
+
+    display: block;
+
+    padding: 35px;
+
+    text-align: center;
+
+    color: #9993a2;
+
+    font-size: 14px;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+
+    .dashboard-page .dashboard-main {
+        padding: 25px;
+    }
+
+    .dashboard-page .task-form {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard-page .task-form input[type="text"],
+    .dashboard-page .task-form input[type="date"] {
+        flex: none;
+    }
+
+    .dashboard-page .task-form button {
+        width: 100%;
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+    .dashboard-page .dashboard-main {
+        padding: 20px 15px;
+    }
+
+    .dashboard-page .dashboard-card {
+        padding: 18px;
+    }
+
+    .dashboard-page .welcome-section h1 {
+        font-size: 25px;
+    }
+
+    .dashboard-page .task-form {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .dashboard-page .task-form input,
+    .dashboard-page .task-form button {
+        width: 100%;
+    }
+
+    .dashboard-page .task-header {
+        display: none;
+    }
+
+    .dashboard-page .task-item {
+        position: relative;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 8px;
+
+        padding: 15px;
+
+        margin-bottom: 10px;
+
+        border: 1px solid #e4dfeb;
+
+        border-radius: 8px;
+    }
+
+    .dashboard-page .task-name {
+        grid-column: span 2;
+    }
+
+    .dashboard-page .task-item button {
+        position: absolute;
+
+        top: 12px;
+        right: 12px;
+    }
+}

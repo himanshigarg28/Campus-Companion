@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/STP-Campus-Companion/CSS/dashboard.css">
+</head>
+<body class="dashboard-page">
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                 <i class="fa-solid fa-graduation-cap" style="color: rgb(70, 48, 133);"></i>
+                 <span>Campus Companion</span>
+            </div>
+            <nav>
+                <button onclick="showPage('dashboard')" class="active">
+                    <i class="fa-solid fa-house-chimney" style="color: rgb(70, 48, 133);"></i>
+                    <span>Dashboard</span>
+                </button>
+                <button onclick="showPage('timetable')">
+                    <i class="fa-solid fa-calendar-days" style="color: rgb(70, 48, 133);"></i>
+                    <span>TimeTable</span>
+                </button>
+                <button onclick="showPage('tasks')">
+                    <i class="fa-solid fa-list-check" style="color: rgb(70, 48, 133);"></i>
+                    <span>Tasks</span>
+                </button>
+                <button onclick="showPage('attendance')">
+                    <i class="fa-solid fa-user-clock" style="color: rgb(70, 48, 133);"></i>
+                    <span>Attendance</span>
+                </button>
+                <button onclick="showPage('cgpa-calculator')">
+                    <i class="fa-solid fa-calculator" style="color: rgb(70, 48, 133);"></i>
+                    <span>CGPA Calculator</span>
+                </button>
+                <button onclick="showPage('notes')">
+                    <i class="fa-solid fa-file-pen" style="color: rgb(70, 48, 133);"></i>
+                    <span>Notes</span>
+                </button>
+                <button onclick="showPage('profile')">
+                    <i class="fa-regular fa-user" style="color: rgb(70, 48, 133);"></i>
+                    <span>Profile</span>
+                </button>
+            </nav>
+            <button class="logout" onclick="logoutBtn()">
+                <i class="fa-solid fa-arrow-right-from-bracket" style="color: rgb(70, 48, 133);"></i>
+                <span>Logout</span>
+            </button>
+        </aside>
+        <section class="dashboard-content">
+             <header class="dashboard-header">
+                <button class="menu-btn">
+                    <i class="fa-solid fa-bars" style="color: rgb(20, 20, 20);"></i>
+                </button>
+                <div class="dashboard-search">
+                    <i class="fa-brands fa-sistrix" style="color: rgb(177, 151, 252);"></i>
+                    <input type="text" id="dashboardSearch"
+                    placeholder="Search Anything">
+                </div>
+                <div class="dashboard-actions">
+                    <button class="theme-btn">
+                        <i class="fa-solid fa-moon" style="color: rgb(20, 20, 20);"></i>
+                    </button>
+                    <button class="notification-btn">
+                        <i class="fa-solid fa-bell" style="color: rgb(20, 20, 20);"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+                    <div class="user-info">
+                        <span class="avatar">
+                        <i class="fa-solid fa-circle-user" style="color: rgb(70, 48, 133);"></i>
+                    </span>
+                     <b id="topname">
+                        Student
+                     </b>
+                    </div> 
+                </div>
+            </header>
+            <main class="dashboard-main">
+                <div class="welcome-section">
+                    <h1>Hello,
+                        <span id="studentName">Student</span>
+                        ! 👋
+                    </h1>
+                    <p>Here's what's happening with your studies today.</p>
+                </div>
+                <div class="stat-cards">
+                    <div class="stat-card-top">
+                        <div class="cgpa-icon">
+                            <i class="fa-solid fa-calculator" style="color: rgb(255, 212, 59);"></i>
+                        </div>
+                        <span>CGPA</span>
+                    </div>
+                    <h2 id="cgpaValue">
+                        9.54
+                    </h2>
+                    <p id="cgpaStatus">
+                        Excellent
+                    </p>
+                </div>
+                <div class="stat-cards">
+                    <div class="stat-card-top">
+                        <div class="attendance-icon">
+                        <i class="fa-solid fa-clipboard-user" style="color: rgb(39, 86, 66);"></i>
+                        </div>
+                        <span>Attendance</span>
+                    </div>
+                    <h2 id="attendanceValue">
+                        82%
+                    </h2>
+                    <p id="attendanceStatus">
+                        Best
+                    </p>
+                </div>
+                <div class="stat-cards">
+                    <div class="stat-card-top">
+                        <div class="pendingTasks-icon">
+                        <i class="fa-solid fa-clipboard-question" style="color: rgb(62, 16, 196);"></i>
+                        </div>
+                        <span>Pending Tasks</span>
+                    </div>
+                    <h2 id="pendingTaskValue">
+                        2
+                    </h2>
+                    <p id="pendingTaskStatus">
+                        Good
+                    </p>
+                </div>
+                <div class="dashboard-grid">
+                    <div class="dashboard-card classes-card">
+                        <div class="card-header">
+                            <h3>Today's Classes</h3>
+                        </div>
+                        <div class="classes-list" id="todayClasses">
+                            <div class="class-item">
+                                <div class="class-time">
+                                    9:00 AM
+                                </div>
+                                <div class="class-subject">
+                                    DAA
+                                </div>
+                                <div class="class-room">
+                                    102C
+                                </div>
+                            </div>
+                            <div class="class-item">
+                                <div class="class-time">
+                                    11:00 AM
+                                </div>
+                                <div class="class-subject">
+                                    SE
+                                </div>
+                                <div class="class-room">
+                                    302
+                                </div>
+                            </div>
+                            <div class="class-item">
+                                <div class="class-time">
+                                    12:00 AM
+                                </div>
+                                <div class="class-subject">
+                                    EFE
+                                </div>
+                                <div class="class-room">
+                                    302
+                                </div>
+                            </div>
+                        </div>
+                        <button class="small-btn" onclick="showPage('timetable')">View Timetable</button>
+                    </div>
+                </div>
+                <div class="dashboard-card tasks-card">
+                    <div class="card-header">
+                        <h3>Upcoming Tasks</h3>
+                    </div>
+                    <div class="upcoming-tasks" id="upcomingTasks">
+                        <div class="task-item">
+                            <div class="task-left">
+                                <input type="checkbox" class="task-checkbox">
+                                <span>DAA Assignment</span>
+                            </div>
+                            <small>Due Today</small>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-left">
+                                <input type="checkbox" class="task-checkbox">
+                                <span>CN Lab File</span>
+                            </div>
+                            <small>Due 7 Sep</small>
+                        </div> 
+                        <div class="task-item">
+                            <div class="task-left">
+                                <input type="checkbox" class="task-checkbox">
+                                <span>DSA Practice</span>
+                            </div>
+                            <small>Due Today</small>
+                        </div> 
+                    </div>
+                    <button class="small-btn" onclick="showPage('tasks')">View All Tasks</button>
+                </div>
+            </main>
+        </section>
+    </div>  
+    <script src="/STP-Campus-Companion/JS/dashboard.js"></script>
+</body>
+</html>
