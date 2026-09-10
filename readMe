@@ -1,0 +1,63 @@
+# Campus Companion
+
+Campus Companion is a student productivity website designed to help students manage their daily academic activities in one place.
+
+## About the Project
+
+Campus Companion provides different features that help students organize their college life easily. The website allows students to manage their timetable, tasks, notes, attendance and calculate their CGPA.
+
+## Features
+
+- Student Profile Setup
+- Dashboard
+- Timetable Management
+- Task Management
+- Attendance Tracking
+- CGPA Calculator
+- Notes Management
+- Dark Mode
+- Data Storage using Local Storage
+- Responsive and user-friendly interface
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- Font Awesome
+- Local Storage
+
+## Project Structure
+
+```text
+Campus-Companion/
+│
+├── index.html
+│
+├── CSS/
+│   ├── dashboard.css
+│   ├── profile.css
+│   ├── timetable.css
+│   ├── tasks.css
+│   ├── notes.css
+│   └── ...
+│
+├── HTML/
+│   ├── index.html
+│   ├── setup.html
+│   ├── dashboard.html
+│   ├── timetable.html
+│   ├── tasks.html
+│   ├── attendance.html
+│   ├── cgpa.html
+│   ├── notes.html
+│   ├── profile.html
+│
+└── JS/
+    ├── dashboard.js
+    ├── profile.js
+    ├── timetable.js
+    ├── tasks.js
+    ├── notes.js
+    ├── attendance.js
+    └── ...
